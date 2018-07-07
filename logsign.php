@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Webkul-Login/Signup</title>
+<link rel="stylesheet" type="text/css" href="logsignc.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function (e) {
+    $('#signupform').on('submit',(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: $(this).attr('action'),
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log(data);
+                alert(data);               
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
+
+    }));
+});
+</script>
+
+</head>
+<body>
+<form action="/webkul/loginp.php" method="POST">
+  <div class="logdiv">
+    <p> WEBKUL </p>
+    <input type="text" placeholder="Enter Email" name="email1" >
+    <input type="password" placeholder="Enter Password" name="psw1">
+    <input type="submit" value="Login">
+  </div>
+</form>
+
+<div class="signupdiv">
+<form action="signupp.php" method="POST" id="signupform" enctype="multipart/form-data">
+    <h2>Create an account</h2>
+    <input type="text" placeholder="User name" name="usrname" ><br>
+    <input type="text" placeholder="Email id" name="Email" ><br>
+    <input type="password" placeholder="Password" name="psw"><br>
+    <label for="Birthdate"><b>Birthday</b></label><br>
+    <input type="date" name="bday"><br>
+    <input type="radio" name="gender" value="male" > Male
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="submit" value="Sign up">
+    </form>
+  </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#signupform').validate({ 
+        onclick: false, // <-- add this option
+        rules: {
+            Email: {
+                required: true,
+                email: true
+            },
+            psw: {
+                required: true,
+                minlength: 5
+            },
+            usrname:
+            {
+              required:true,
+              minlength:5
+            } ,
+            bday:
+            {
+             required:true,
+             date:true
+            },
+            gender : 
+            {required :true}
+
+        }
+    });
+
+});
+
+</script>
+</body>
+</html>

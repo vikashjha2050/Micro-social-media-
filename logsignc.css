@@ -1,0 +1,53 @@
+ .logdiv p  {
+    color: white;
+     margin :auto;    
+    font-size: 35px;
+}
+ .logdiv {
+	background-color:#3333ff;
+ 	margin: auto;
+    width: 50%;
+    padding:20px 20px;}
+
+ .signupdiv {
+	background:linear-gradient(#ffffff,#99ccff);
+ 	margin: auto;
+    width: 50%;
+    padding:15px 25px;}
+
+ .logdiv input[type=text],
+ .logdiv input[type=password]{
+    width: 40%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    box-sizing: border-box;}
+
+.logdiv input[type=submit],
+.signupdiv input[type=submit]{
+    width: 16%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	background-color:#0033cc;
+	color:white; 
+
+}
+
+.signupdiv input[type=text],
+.signupdiv input[type=password]
+ {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.signupdiv input[type=date]
+
+ {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
